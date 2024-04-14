@@ -11,7 +11,7 @@ const Menubar = ({ title, className = "" }) => {
   return (
     <Grid
       container
-      className="menubar pointer-events-auto flex select-none flex-row items-center justify-between text-von-lightGray"
+      className="menuBar pointer-events-auto flex select-none flex-row items-center justify-between text-von-lightGray"
     >
       <Grid item className="flex flex-row items-center gap-4 font-title">
         <Avatar variant="square" src="/img/vonBow_v2.png" />

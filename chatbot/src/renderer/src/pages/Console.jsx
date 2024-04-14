@@ -1,14 +1,13 @@
-import { Grid, Divider } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import ChatMessage from "../ui/ChatMessage";
-import User from "../ui/User";
-
-// const { chats } = (await import("../dev-data/chats.json")) ?? [];
 
 import { chats } from "../dev-data/chats";
-import { users } from "../dev-data/users";
+import { editors, mods, users } from "../dev-data/users";
+
 import ChatInput from "../ui/ChatInput";
-// const { users } = (await import("../dev-data/users.json")) ?? [];
+import Accordion from "../ui/Accordion";
+import User from "../ui/User";
 
 const Console = () => {
   return (
@@ -27,13 +26,37 @@ const Console = () => {
       <Grid item className="!grow">
         <ChatInput className="!w-[100%]" />
       </Grid>
-      <Grid
-        item
-        className="row-span-3 h-[100%] w-[200px] overflow-y-auto border-x-0 border-y-0 border-l-[1px] border-solid border-von-lightGray/50"
-      >
-        {users.map((user, i) => {
-          return <User body={user} key={i} />;
-        })}
+      <Grid item className=" row-span-3  h-[100%] w-[250px] overflow-y-auto">
+        <Accordion
+          list={editors}
+          title="Editors"
+          aria_control="editor-content"
+          id="editor-header"
+        >
+          {editors.map((item, i) => {
+            return <User body={item} key={i} />;
+          })}
+        </Accordion>
+        <Accordion
+          list={mods}
+          title="Moderators"
+          aria_control="mods-content"
+          id="mods-header"
+        >
+          {mods.map((item, i) => {
+            return <User body={item} key={i} />;
+          })}
+        </Accordion>
+        <Accordion
+          list={users}
+          title="Viewers"
+          aria_control="users-content"
+          id="users-header"
+        >
+          {users.map((item, i) => {
+            return <User body={item} key={i} />;
+          })}
+        </Accordion>
       </Grid>
     </Grid>
   );

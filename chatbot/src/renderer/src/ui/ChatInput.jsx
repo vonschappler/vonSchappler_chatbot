@@ -14,9 +14,7 @@ const ChatInput = ({ className = "" }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState(chats);
 
-  // #TODO: find a way to make this chat input work properly
-
-  // const handleSubmit = (e) => {
+    // const handleSubmit = (e) => {
   //   e.preventDefault();
   //   const newMessage = message;
   //   alert(newMessage);

@@ -194,8 +194,7 @@
       @apply py-[0.54rem] text-von-lightGray;
     }
   }
-
-  .menubar {
+  .menuBar {
     -webkit-app-region: drag;
     @apply flex h-fit flex-row border-x-0 border-y-0 border-b-[1px] border-solid border-von-lightGray/50 bg-von-darkGray !shadow-none;
     .MuiPaper-root {
@@ -215,7 +214,16 @@
       }
     }
   }
-  .sidebar {
+  .sideBar {
     @apply flex h-[fit] flex-col border-x-0 border-y-0 border-r-[1px] border-solid border-von-lightGray/50;
+  }
+  .accordion {
+    @apply !bg-transparent  font-page !text-von-lightGray;
+    .MuiButtonBase-root {
+      @apply bg-von-darkGray font-title;
+    }
+    .MuiSvgIcon-root {
+      @apply !text-von-lightGray;
+    }
   }
 }

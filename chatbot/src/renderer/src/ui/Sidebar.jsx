@@ -1,10 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-const Sidebar = ({ className = '' }) => {
+const Sidebar = ({ className = "" }) => {
   return (
-    <aside className={`sidebar ${className}`}>
-      <NavLink to='/'>Console</NavLink>
-      <NavLink to='/commands'>Commands</NavLink>
+    <aside className={`sideBar ${className}`}>
+      <NavLink to="/">Console</NavLink>
+      <NavLink to="/commands">Commands</NavLink>
     </aside>
   );
 };
