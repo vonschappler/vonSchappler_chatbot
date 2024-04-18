@@ -1,10 +1,11 @@
-import { Grid } from "@mui/material";
+import { useSelector } from "react-redux";
 
 const Footer = ({ className = "" }) => {
+  const { page } = useSelector((state) => state.viewSettings);
   return (
     <footer className={`${className}`}>
-        <span className="grow">Page name</span>
-        <span >Version: 1.0.0</span>
+      <span className="grow">{page}</span>
+      <span>Version: 1.0.0</span>
     </footer>
   );
 };

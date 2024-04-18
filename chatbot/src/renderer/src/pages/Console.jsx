@@ -23,10 +23,11 @@ const Console = () => {
           return <ChatMessage body={chat} key={i} />;
         })}
       </Grid>
-      <Grid item className="!grow">
-        <ChatInput className="!w-[100%]" />
-      </Grid>
-      <Grid item className=" row-span-3  h-[100%] w-[250px] overflow-y-auto">
+      <ChatInput className="!w-[100%] grow" />
+      <Grid
+        item
+        className=" row-span-3  h-[100%] w-[250px] overflow-y-auto border-x-0 border-y-0 border-l-[1px] border-solid border-von-lightGray/50"
+      >
         <Accordion
           list={editors}
           title="Editors"

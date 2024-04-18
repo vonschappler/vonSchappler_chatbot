@@ -1,11 +1,12 @@
 import { Grid } from "@mui/material";
 
 import Accordion from "../ui/Accordion";
+import ChatInput from "../ui/ChatInput";
 
 const Commands = () => {
   return (
     <Grid container className="overflow-y-auto">
-      <Accordion height={100} title={`Drag'n drop commands`}>
+      <Accordion height={100} title={`Drag'n drop commands`} expanded={false}>
         <Grid container className="p-4">
           <Grid item>
             <p>
@@ -134,6 +135,7 @@ const Commands = () => {
           </Grid>
         </Grid>
       </Accordion>
+      <ChatInput />
     </Grid>
   );
 };

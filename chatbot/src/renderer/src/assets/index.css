@@ -189,10 +189,7 @@
 
 @layer components {
   .chatField {
-    @apply flex flex-row items-center;
-    .MuiSelect-select {
-      @apply py-[0.54rem] text-von-lightGray;
-    }
+    @apply bg-red-900;
   }
   .menuBar {
     -webkit-app-region: drag;

@@ -1,10 +1,60 @@
-import { NavLink } from "react-router-dom";
+import { Tabs as BaseTabs, Tab } from "@mui/material";
+import { NavLink, useLocation } from "react-router-dom";
+import * as Icons from "@mui/icons-material";
 
-const Sidebar = ({ className = "" }) => {
+import { useDispatch } from "react-redux";
+
+import { menuSide } from "../constants/sidebarConstants";
+import { forwardRef, useState } from "react";
+import { setPage } from "../features/view/viewFeatures.slice";
+
+const Tabs = forwardRef((props, ref) => {
+  return <BaseTabs ref={ref} {...props} />;
+});
+
+Tabs.displayName = "Tabs";
+
+const getIcon = (icon) => {
+  const Icon = Icons[icon];
+  return <Icon />;
+};
+
+const Sidebar = ({ reference, className = "", ...props }) => {
+  const { pathname } = useLocation();
+  const dispatch = useDispatch();
+  const [path, setPath] = useState(pathname);
+
+  const hadleChangePath = (value, link) => {
+    setPath(value);
+    dispatch(setPage(link));
+  };
+
   return (
     <aside className={`sideBar ${className}`}>
-      <NavLink to="/">Console</NavLink>
-      <NavLink to="/commands">Commands</NavLink>
+      <Tabs
+        orientation="vertical"
+        ref={reference}
+        value={path}
+        className="transition-all"
+        variant="scrollable"
+        {...props}
+      >
+        {menuSide.map((menu, i) => {
+          const { link, path, icon } = menu;
+          return (
+            <Tab
+              key={i}
+              label={link}
+              to={path}
+              LinkComponent={NavLink}
+              icon={icon && getIcon(icon)}
+              value={path}
+              // className=""
+              onClick={() => hadleChangePath(path, link)}
+            />
+          );
+        })}
+      </Tabs>
     </aside>
   );
 };

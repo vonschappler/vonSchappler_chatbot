@@ -35,10 +35,16 @@
 // export default App;
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+
 import AppLayout from "./ui/AppLayout";
+
+import { setPage } from "./features/view/viewFeatures.slice";
 
 import Console from "./pages/Console";
 import Commands from "./pages/Commands";
+import Settings from "./pages/Settings";
 
 const routes = createBrowserRouter([
   {
@@ -46,11 +52,16 @@ const routes = createBrowserRouter([
     children: [
       { path: "/", element: <Console /> },
       { path: "/commands", element: <Commands /> },
+      { path: "/settings", element: <Settings /> },
     ],
   },
 ]);
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setPage("Console"));
+  }, [dispatch]);
   return <RouterProvider router={routes} />;
 };
 
