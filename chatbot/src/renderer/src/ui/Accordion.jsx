@@ -7,20 +7,22 @@ import { useState } from "react";
 
 import AccordionExpanderButton from "./AccordionExpanderButton";
 
-const Accordion = ({ title, height = 30, children }) => {
-  const [expanded, setExpanded] = useState(true);
+const Accordion = ({
+  title,
+  height = 30,
+  children,
+  expanded = true,
+  background = "transparent",
+  ...props
+}) => {
+  const [open, setOpen] = useState(expanded);
   const handleClick = () => {
-    setExpanded((cur) => !cur);
+    setOpen((cur) => !cur);
   };
   return (
-    <BaseAccordion
-      expanded={expanded}
-      disableGutters
-      square
-      className="accordion"
-    >
+    <BaseAccordion expanded={open} disableGutters square className="accordion">
       <AccordionSummary
-        expandIcon={<AccordionExpanderButton expanded={expanded} />}
+        expandIcon={<AccordionExpanderButton expanded={open} />}
         onClick={handleClick}
         sx={{
           maxHeight: `${height}px`,
@@ -29,7 +31,9 @@ const Accordion = ({ title, height = 30, children }) => {
       >
         <span>{title}</span>
       </AccordionSummary>
-      <AccordionDetails className="!p-0">{children}</AccordionDetails>
+      <AccordionDetails className={`!m-0 !p-0 ${background}`}>
+        {children}
+      </AccordionDetails>
     </BaseAccordion>
   );
 };

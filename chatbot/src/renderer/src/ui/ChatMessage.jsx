@@ -10,13 +10,13 @@ const ChatMessage = ({ body }) => {
   return (
     <Grid
       container
-      className="flex flex-row
-      items-center gap-3 p-1 odd:bg-von-darkGray/10 even:bg-von-lightGray/10 "
+      className="!grid !grid-cols-[auto_1fr] 
+      items-center gap-3 p-2 odd:bg-von-darkGray/10 even:bg-von-lightGray/10 "
     >
       <Grid item>
         <Avatar src="/img/vonBow_v2.png" />
       </Grid>
-      <Grid item className="!grow">
+      <Grid item className="grow">
         <Grid container className="flex !flex-col gap-1">
           <Grid item>
             <p style={{ color: tags.color }} className="font-title">

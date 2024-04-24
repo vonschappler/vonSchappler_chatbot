@@ -45,14 +45,19 @@ import { setPage } from "./features/view/viewFeatures.slice";
 import Console from "./pages/Console";
 import Commands from "./pages/Commands";
 import Settings from "./pages/Settings";
+import Community from "./pages/Community";
+import NotFound from "./pages/NotFound";
 
 const routes = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <NotFound />,
     children: [
       { path: "/", element: <Console /> },
       { path: "/commands", element: <Commands /> },
       { path: "/settings", element: <Settings /> },
+      { path: "/community", element: <Community /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);

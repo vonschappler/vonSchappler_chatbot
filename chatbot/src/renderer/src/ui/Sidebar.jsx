@@ -35,7 +35,6 @@ const Sidebar = ({ reference, className = "", ...props }) => {
         orientation="vertical"
         ref={reference}
         value={path}
-        className="transition-all"
         variant="scrollable"
         {...props}
       >
@@ -49,7 +48,6 @@ const Sidebar = ({ reference, className = "", ...props }) => {
               LinkComponent={NavLink}
               icon={icon && getIcon(icon)}
               value={path}
-              // className=""
               onClick={() => hadleChangePath(path, link)}
             />
           );

@@ -2,14 +2,24 @@ import { Grid } from "@mui/material";
 
 import Accordion from "../ui/Accordion";
 
-const Commands = () => {
+const Community = () => {
   return (
     <Grid
       container
       className="flex h-full max-h-fit flex-col content-start gap-3 !overflow-y-auto"
     >
       <Accordion title="Channel subscribers" expanded={true}>
-        Built-in Commands list
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+        corporis, esse quia amet autem odio assumenda rem qui natus veritatis.
+        Dignissimos officiis labore voluptatum maxime sapiente? Aperiam, minima
+        quibusdam unde id ea sunt provident officiis a itaque aliquam voluptatum
+        accusamus totam dignissimos obcaecati laborum quis expedita? Doloribus
+        quibusdam odio deserunt error deleniti dolore dolorum! Maxime tempora id
+        deleniti illum officiis recusandae cumque! Ea ipsa cupiditate magni
+        totam sint itaque repudiandae ducimus eum maxime sit ab molestiae iusto,
+        nemo, vel sequi voluptates in repellendus at voluptatem perspiciatis ex
+        debitis, sapiente facilis aliquid? A perferendis repellat quisquam error
+        consequuntur! Rerum, ullam odit.
       </Accordion>
       <Accordion title="Channel editors" expanded={false}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iste
@@ -93,4 +103,4 @@ const Commands = () => {
   );
 };
 
-export default Commands;
+export default Community;

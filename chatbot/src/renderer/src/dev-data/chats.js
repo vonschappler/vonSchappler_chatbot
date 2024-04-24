@@ -443,6 +443,14 @@ const chats = [
     },
     parameters: "this is a chat message test for my chatbot",
   },
+  {
+    tags: {
+      color: "#ff0",
+      "display-name": "JosiasPeDeCana",
+      "tmi-sent-ts": "1550868392494",
+    },
+    parameters: "Tô bebim da silva!",
+  },
 ];
 
 export { chats };

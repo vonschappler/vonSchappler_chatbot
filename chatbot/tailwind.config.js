@@ -41,6 +41,7 @@ module.exports = {
           lightGray: "#dedede",
           teal: "#16b2ab",
         },
+        peixoto: "#ff00ff",
       },
     },
   },
