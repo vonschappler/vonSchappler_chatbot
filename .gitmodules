@@ -1,6 +1,6 @@
-[submodule "Application"]
-	path = chatbot_deploy
-	url = https://github.com/vonschappler/vonSchappler_chatbotdeploy.git
-[submodule "Code"]
-	path = chatbot_src
+[submodule "chatbot_deploy"]
+	path = Application
+	url = https://github.com/vonschappler/vonSchappler_chatbot_deploy.git
+[submodule "chatbot_src"]
+	path = Code
 	url = https://github.com/vonschappler/vonSchappler_chatbot_src.git
