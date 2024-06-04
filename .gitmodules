@@ -1,0 +1,3 @@
+[submodule "chatbot_deploy"]
+	path = chatbot_deploy
+	url = https://github.com/vonschappler/vonSchappler_chatbotdeploy.git
